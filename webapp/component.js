@@ -22,7 +22,7 @@ sap.ui.define([
             //UIComponent.prototype.init	Refers to the original init function from UIComponent (SAPUI5 base class)
             //.apply(this, arguments);	Calls the parent init() method in the context of this component (inherits SAPUI5 lifecycle)
             UIComponent.prototype.init.apply(this,arguments);
-            jQuery.sap.includeStyleSheet(sap.ui.require.toUrl("ui5/walkthrough/css/style.css"));
+            // jQuery.sap.includeStyleSheet(sap.ui.require.toUrl("ui5/walkthrough/css/style.css"));
             var oData ={
                 recipient:{
                     name:"UI5"
@@ -40,8 +40,11 @@ sap.ui.define([
             // this.setModel(i18nModel,"i18n") //alias
 
             //set dialog
+            
+            //THIS Calls the constructor in HelloDialog.js
             this._helloDialog = new HelloDialog(this.getRootControl());
-
+            //The method this.getRootControl() is used inside a UI5 Component (Component.js) 
+            //to retrieve the main/root view of the application.
         },
         exit: function(){
             this._helloDialog.destroy();

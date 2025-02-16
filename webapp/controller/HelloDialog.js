@@ -5,6 +5,7 @@ sap.ui.define([
 ], function (ManagedObject, Fragment) {
     "use strict";
     return ManagedObject.extend("ui5.walkthrough.controller.HelloDialog", {
+        //*****CONSTRUCTOR*****
         constructor: function (oView) {
             this._oView = oView
 

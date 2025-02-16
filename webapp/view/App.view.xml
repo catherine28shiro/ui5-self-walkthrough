@@ -10,6 +10,11 @@
         <App class="myAppDemoWT">
             <pages>
                 <Page title="{i18n>homePageTitle}" titleAlignment="Center">
+                <!-- add a icon button on header -->
+                    <headerContent>
+                        <Button icon="sap-icon://hello-world" press=".onOpenDialog"/>
+                        <!-- .onOpenDialog is located in the App.controller -->
+                    </headerContent>
                     <content>
                         <mvc:XMLView
                             viewName="ui5.walkthrough.view.HelloPanel"/>
