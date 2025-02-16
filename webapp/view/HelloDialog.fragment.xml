@@ -1,0 +1,18 @@
+<!-- a reusable UI part that does not have its own controller. 
+ Fragments are used to create dialogs, popovers, forms, 
+ or sections of a view that can be reused across multiple views. -->
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    
+    <!-- this id is used by search by Id in HelloDialog controller -->
+    <Dialog id="helloDialog" title="Hello {/recipient/name}" titleAlignment="Center">
+        <content>
+        <core:Icon src="sap-icon://hello-world" size="8rem" class="sapUiMediumMargin"/>
+        </content>
+        <beginButton>
+            <Button text="{i18n>dialogCloseButtonText}" press=".onCloseDialog"/>
+        </beginButton>
+    </Dialog>
+
+</core:FragmentDefinition>
