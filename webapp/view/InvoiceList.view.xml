@@ -2,10 +2,25 @@
 controllerName="ui5.walkthrough.controller.InvoiceList"
 xmlns="sap.m"
 xmlns:mvc="sap.ui.core.mvc">
-    <List headerText="{i18n>invoiceListTitle}"
+    <!-- this id="ivoiceList" will be used for in the controller for finding this Ui <List></List> -->
+    <List id="invoiceList"
+        headerText="{i18n>invoiceListTitle}"
         class="sapUiResponsiveMargin"
         width="auto"
-        items="{invoice>/Invoices}">
+        items="{
+            path: 'invoice>/Invoices',
+            sorter:{
+                path:'ShipperName',
+                group: true
+                }
+        }">
+        <headerToolbar>
+            <Toolbar>
+            <Title text="{i18n>invoiceListTitle}"/>
+            <ToolbarSpacer/>
+            <SearchField width="50%" placeholder="{i18n>searchPlaceholder}" search=".onFilterInvoices"/>
+            </Toolbar>
+        </headerToolbar>
         <!-- data binding -->
         <!-- invoice> Refers to the model named "invoice" defined in manifest
         the invoice model is linked to Invoices.json as an external data source
